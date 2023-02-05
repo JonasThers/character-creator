@@ -1,0 +1,10 @@
+<h1>Classes</h1>
+<p>List of the classes you can assign your characters</p>
+
+<ul>
+  <% @character_classes.each do |character_class| %>
+    <li>
+      <%= character_class.name %>
+    </li>
+  <% end %>
+</ul>
