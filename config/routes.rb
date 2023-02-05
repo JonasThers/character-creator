@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "classes#index"
+  root "main#index"
 
   get "/classes", to: "classes#index"
 end
