@@ -10,8 +10,8 @@ class CharacterClassesController < ApplicationController
   def create
     @character_class = CharacterClass.new(character_classes_params)
 
-    if @@character_class.save
-      redirect_to "/"
+    if @character_class.save
+      redirect_to character_classes_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,6 +19,6 @@ class CharacterClassesController < ApplicationController
 
   private
     def character_classes_params
-      params.require(:name).permit(:name)
+      params.require(:character_class).permit(:name)
     end
 end
