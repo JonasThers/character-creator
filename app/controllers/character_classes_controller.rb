@@ -17,6 +17,27 @@ class CharacterClassesController < ApplicationController
     end
   end
 
+  def edit
+    @character_class = CharacterClass.find(params[:id])
+  end
+
+  def update
+    @character_class = CharacterClass.find(params[:id])
+
+    if @character_class.update(character_classes_params)
+      redirect_to character_classes_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @character_class = CharacterClass.find(params[:id])
+    @character_class.destroy
+
+    redirect_to character_classes_path, status: :see_other
+  end
+
   private
     def character_classes_params
       params.require(:character_class).permit(:name)
