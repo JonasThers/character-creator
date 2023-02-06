@@ -1,0 +1,14 @@
+<h1>Characters</h1>
+
+<ul>
+  <% @characters.each do |character| %>
+    <li>
+      <%= character.name %>
+      <a href="/characters/<%= character.id %>">
+        Read more
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit", new_character_path %>
