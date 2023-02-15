@@ -1,0 +1,20 @@
+<h1>Parties</h1>
+<p>List of the parties you can go on adventures with</p>
+
+<ul>
+  <% @parties.each do |party| %>
+    <li>
+      <a href="/parties/<%= party.id %>">
+        <%= party.name %>
+      </a>
+      <li><%= link_to "Edit", edit_party_path(party.id) %></li>
+      <li><%= link_to "Destroy", party_url(party.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+      </li>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New", new_party_path %>

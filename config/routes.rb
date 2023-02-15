@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :character_classes
   resources :characters
+  resources :parties
 end

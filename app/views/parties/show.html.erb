@@ -1,0 +1,10 @@
+<h1><%= @party.name %></h1>
+
+<ul>
+    <li><%= link_to "Edit", edit_party_path(@party) %></li>
+    <li><%= link_to "Destroy", party_path(@party), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        } %>
+    </li>
+</ul>

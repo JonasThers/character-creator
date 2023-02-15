@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_06_191208) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_155740) do
   create_table "character_classes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_06_191208) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "character_class_id"
+    t.index ["character_class_id"], name: "index_characters_on_character_class_id"
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "characters", "character_classes"
 end
