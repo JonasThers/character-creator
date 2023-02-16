@@ -1,5 +1,6 @@
 <h1><%= @character.name %></h1>
 
+<p>Class: <%= @character.character_class.name %></p>
 <ul>
     <li><%= link_to "Edit", edit_character_path(@character) %></li>
     <li><%= link_to "Destroy", character_path(@character), data: {
