@@ -1,6 +1,14 @@
 <h1><%= @character.name %></h1>
 
 <p>Class: <%= @character.character_class.name %></p>
+
+<h3>Stats:</h3>
+<p>Strength: <%= @character.character_class.strength %></p>
+<p>Dexterity: <%= @character.character_class.dexterity %></p>
+<p>Wisdom: <%= @character.character_class.wisdom %></p>
+<p>Intelligence: <%= @character.character_class.intelligence %></p>
+<p>Charisma: <%= @character.character_class.charisma %></p>
+
 <ul>
     <li><%= link_to "Edit", edit_character_path(@character) %></li>
     <li><%= link_to "Destroy", character_path(@character), data: {
