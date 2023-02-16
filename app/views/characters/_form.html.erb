@@ -7,13 +7,18 @@
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :character_class_id %><br>
-    
-    <%= form.collection_select(:character_class_id, CharacterClass.all, :id, :name) %>
-     <% character.errors.full_messages_for(:character_class_id).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div data-controller="showstats">
+    <div>
+      <%= form.label :character_class_id %><br>
+      <%= form.collection_select :character_class_id, CharacterClass.all, :id, :name, {prompt: "Select character"}, data: {showstats_target: "input", action: "change->showstats#toggle"} %>
+      <% character.errors.full_messages_for(:character_class_id).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div data-showstats-target="output">
+      Stats go here
+    </div>
   </div>
 
   <div>
