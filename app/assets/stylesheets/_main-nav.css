@@ -1,0 +1,38 @@
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+   
+.main-nav__menu {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+  
+.main-nav__menu-item {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.main-nav__menu-item:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.main-nav__logo-link,
+.main-nav__menu-item-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.main-nav__logo {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .main-nav {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }

@@ -1,5 +1,19 @@
-<nav>
-    <%= link_to "Character", characters_path %>
-    <%= link_to "Classes", character_classes_path %>
-    <%= link_to "Parties", parties_path %>
+<nav class="main-nav">
+    <%= link_to root_path, class: "main-nav__logo-link" do %>
+        <h1 class="main-nav__logo">Ruby RPG</h1>
+    <% end %>
+    <ul class="main-nav__menu">
+        <li class="main-nav__menu-item">
+            <%= link_to 'Home', root_path, class: "main-nav__menu-item-link" %>
+        </li>
+        <li class="main-nav__menu-item">
+            <%= link_to "Parties", parties_path, class: "main-nav__menu-item-link" %>
+        </li>
+        <li class="main-nav__menu-item">
+            <%= link_to "Character", characters_path, class: "main-nav__menu-item-link" %>
+        </li>
+        <li class="main-nav__menu-item">
+            <%= link_to "Classes", character_classes_path, class: "main-nav__menu-item-link" %>
+        </li>
+    </ul>
 </nav>
