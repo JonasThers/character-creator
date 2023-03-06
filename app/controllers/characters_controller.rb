@@ -1,6 +1,13 @@
 class CharactersController < ApplicationController
     def index
         @characters = Character.all.page(params[:page]).per(5)
+
+        @character_classes = CharacterClass.all
+
+        if params[:character_class].present?
+          @search_filters_class = params[:character_class]
+          @characters = @characters.where({"character_class_id" => params[:character_class]})
+      end
     end
 
     def show

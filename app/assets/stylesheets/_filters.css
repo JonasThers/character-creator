@@ -1,0 +1,15 @@
+.filters {
+    margin-bottom: 3rem;
+  }
+ 
+.filters__class {
+    margin-bottom: 1rem;
+  }
+ 
+.filters__class a {
+    margin-right: 1rem;
+  }
+
+.selected {
+    font-weight: bold;
+  }
