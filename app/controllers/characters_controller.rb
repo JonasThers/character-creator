@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
     def index
-        @characters = Character.all
+        @characters = Character.all.page(params[:page]).per(5)
     end
 
     def show

@@ -3,6 +3,7 @@
 <%= link_to "Add a new character", new_character_path, class: "button" %>
 
 <ul class="characters-list">
+<%= paginate @characters %>
   <% @characters.each do |character| %>
     <li class="characters-list__character">
       <h3 class="characters-list__character-name"><%= character.name %>, the <%= character.character_class.name %></h3>
