@@ -1,0 +1,20 @@
+.parties-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.parties-list__party {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    max-width: 300px;
+    padding-bottom: 1rem;
+}
+
+.parties-list__party-name {
+    margin-bottom: 0.5rem;
+}
+
+.parties-list__party-actions {
+    display: flex;
+    gap: 1rem;
+}

@@ -1,20 +1,23 @@
 <h1>Parties</h1>
 <p>List of the parties you can go on adventures with</p>
 
-<ul>
+<%= link_to "Add new party", new_party_path, class: "button" %>
+
+<ul class="parties-list">
   <% @parties.each do |party| %>
-    <li>
+    <li class="parties-list__party">
       <a href="/parties/<%= party.id %>">
-        <%= party.name %>
+        <h3 class="parties-list__party-name"><%= party.name %></h3>
       </a>
-      <li><%= link_to "Edit", edit_party_path(party.id) %></li>
-      <li><%= link_to "Destroy", party_url(party.id), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-      </li>
+      <div class="parties-list__party-actions">
+        <div><%= link_to "Edit", edit_party_path(party.id), class: "button" %></div>
+        <div><%= link_to "Destroy", party_url(party.id), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, 
+              class: "button" %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>
-
-<%= link_to "New", new_party_path %>
