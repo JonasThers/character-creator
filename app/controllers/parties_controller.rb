@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
   def index
-    @parties = Party.all
+    @parties = Party.all.page(params[:page]).per(5)
   end
   
   def show
