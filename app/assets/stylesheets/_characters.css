@@ -1,0 +1,15 @@
+.characters-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.characters-list__character {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    max-width: 300px;
+    padding-bottom: 1rem;
+}
+
+.characters-list__character-name {
+    margin-bottom: 0.5rem;
+}
