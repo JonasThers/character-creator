@@ -40,6 +40,7 @@ class CharacterClassesController < ApplicationController
 
   def pending_classes
     @pending_classes = CharacterClass.where('status' => 'pending')
+    authorize @pending_classes
   end
 
   private
