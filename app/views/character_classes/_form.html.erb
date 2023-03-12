@@ -47,7 +47,11 @@
     <% end %>
   </div>
 
-  <%= form.hidden_field :status, value: 'pending' %>
+  <% if user_signed_in? %>
+    <%= form.select :status, ['approved', 'pending'] %>
+  <% else %>
+    <%= form.hidden_field :status, value: 'pending' %>
+  <% end %>
 
   <div>
     <%= form.submit %>

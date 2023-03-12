@@ -1,6 +1,6 @@
 class CharacterClassesController < ApplicationController
   def index
-    @character_classes = CharacterClass.all
+    @character_classes = CharacterClass.where('status' => 'approved')
   end
 
   def new
@@ -36,6 +36,10 @@ class CharacterClassesController < ApplicationController
     @character_class.destroy
 
     redirect_to character_classes_path, status: :see_other
+  end
+
+  def pending_classes
+    @pending_classes = CharacterClass.where('status' => 'pending')
   end
 
   private

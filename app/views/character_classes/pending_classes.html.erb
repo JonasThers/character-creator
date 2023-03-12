@@ -1,0 +1,13 @@
+<ul>
+  <% @pending_classes.each do |character_class| %>
+    <li>
+      <%= character_class.name %>
+      <li><%= link_to "Approve", edit_character_class_path(character_class.id) %></li>
+      <li><%= link_to "Destroy", character_class_url(character_class.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+      </li>
+    </li>
+  <% end %>
+</ul>
