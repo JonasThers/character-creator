@@ -16,6 +16,7 @@ class PartiesController < ApplicationController
 
     if @party.save
       redirect_to parties_path
+      flash[:notice] = "Party has been created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,6 +31,7 @@ class PartiesController < ApplicationController
 
     if @party.update(parties_params)
       redirect_to parties_path
+      flash[:notice] = "Party has been updated"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,6 +42,7 @@ class PartiesController < ApplicationController
     @party.destroy
 
     redirect_to parties_path, status: :see_other
+    flash[:notice] = "Party has been deleted"
   end
 
   private

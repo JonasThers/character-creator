@@ -23,6 +23,7 @@ class CharactersController < ApplicationController
     
         if @character.save
           redirect_to characters_path
+          flash[:notice] = "Character has been created"
         else
           render :new, status: :unprocessable_entity
         end
@@ -37,6 +38,7 @@ class CharactersController < ApplicationController
     
         if @character.update(characters_params)
           redirect_to characters_path
+          flash[:notice] = "Character has been updated"
         else
           render :edit, status: :unprocessable_entity
         end
@@ -47,6 +49,7 @@ class CharactersController < ApplicationController
         @character.destroy
     
         redirect_to characters_path, status: :see_other
+        flash[:notice] = "Character has been deleted"
     end
     
     private

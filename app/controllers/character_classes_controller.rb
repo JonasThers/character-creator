@@ -12,6 +12,7 @@ class CharacterClassesController < ApplicationController
 
     if @character_class.save
       redirect_to character_classes_path
+      flash[:notice] = "You have succesfully requested a new class"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,6 +27,7 @@ class CharacterClassesController < ApplicationController
 
     if @character_class.update(character_classes_params)
       redirect_to character_classes_path
+      flash[:notice] = "Class has been updated"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,6 +38,7 @@ class CharacterClassesController < ApplicationController
     @character_class.destroy
 
     redirect_to character_classes_path, status: :see_other
+    flash[:notice] = "Class has been deleted"
   end
 
   def pending_classes
