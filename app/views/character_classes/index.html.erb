@@ -1,7 +1,11 @@
 <h1>Classes</h1>
 <p>List of the classes you can assign your characters</p>
 
-<%= link_to "Request a new class", new_character_class_path, class: "button" %>
+<% if user_signed_in? %>
+  <%= link_to "Check pending classes", pending_classes_character_classes_path, class: "button" %>
+<% else %>
+  <%= link_to "Request a new class", new_character_class_path, class: "button" %>
+<% end %>
 
 <ul>
   <% @character_classes.each do |character_class| %>
