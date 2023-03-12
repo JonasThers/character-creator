@@ -30,6 +30,9 @@ gem "jbuilder"
 # For pagination
 gem 'kaminari'
 
+# For authentication https://github.com/heartcombo/devise
+gem 'devise'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
