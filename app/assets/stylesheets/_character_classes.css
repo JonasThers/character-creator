@@ -1,0 +1,15 @@
+.characters-classes-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.characters-classes-list__character-class{
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000;
+    max-width: 300px;
+    padding-bottom: 1rem;
+}
+
+.characters-classes-list__characte-class-name {
+    margin-bottom: 0.5rem;
+}
