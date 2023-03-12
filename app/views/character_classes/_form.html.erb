@@ -8,6 +8,48 @@
   </div>
 
   <div>
+    <%= form.label :strength %><br>
+    <%= form.text_field :strength %>
+    <% character_class.errors.full_messages_for(:strength).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :dexterity %><br>
+    <%= form.text_field :dexterity %>
+    <% character_class.errors.full_messages_for(:dexterity).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :charisma %><br>
+    <%= form.text_field :charisma %>
+    <% character_class.errors.full_messages_for(:charisma).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :intelligence %><br>
+    <%= form.text_field :intelligence %>
+    <% character_class.errors.full_messages_for(:intelligence).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :wisdom %><br>
+    <%= form.text_field :wisdom %>
+    <% character_class.errors.full_messages_for(:wisdom).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= form.hidden_field :status, value: 'pending' %>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
