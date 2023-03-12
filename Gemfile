@@ -33,6 +33,9 @@ gem 'kaminari'
 # For authentication https://github.com/heartcombo/devise
 gem 'devise'
 
+# For authorization
+gem 'pundit'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
